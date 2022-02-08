@@ -13,7 +13,7 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "exports": "exports src/*.ts --exports --types --main calendar",
-    "prepublishOnly": "npm run test && npm run exports"
+    "prepublishOnly": "npm run coverage && npm run exports"
   },
   "devDependencies": {
     "@atomico/exports": "^0.22.2",
