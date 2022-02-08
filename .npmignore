@@ -1,0 +1,7 @@
+/node_modules
+/index.html
+/site
+/coverage
+/**/*.test.js
+/**/*.spec.js
+/vite.config.js

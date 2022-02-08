@@ -1,0 +1,24 @@
+{
+  "name": "@uppercod/calendar",
+  "description": "Day generator for a month grouped by week",
+  "workspaces": [
+    "src/**/*",
+    "site"
+  ],
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "exports": "exports src/*.ts --exports --types --main calendar",
+    "prepublishOnly": "npm run test && npm run exports"
+  },
+  "devDependencies": {
+    "@atomico/exports": "^0.22.2",
+    "c8": "^7.11.0",
+    "vite": "latest",
+    "vitest": "^0.2.8"
+  }
+}

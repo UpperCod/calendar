@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      html,
+      body {
+        margin: 0px;
+      }
+      #calendar {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: arial;
+        font-size: clamp(1rem, 2.5vw, 2rem);
+      }
+      #calendar .month {
+        padding: 2vw;
+        font-weight: bold;
+      }
+      #calendar .month-out {
+        opacity: 0.25;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calendar"></div>
+
+    <script type="module">
+      import { getMonthRowsFromDate } from "./src/calendar.ts";
+
+      const month = getMonthRowsFromDate(new Date(2022, 1));
+
+      calendar.innerHTML = `
+        <table>
+          ${month.reduce(
+            (content, week) =>
+              content +
+              `<tr>${week.reduce(
+                (content, day) =>
+                  content +
+                  `<td class="month month-${
+                    day.getMonth() == 1 ? "in" : "out"
+                  }">${day.getDate()}</td>`,
+                ""
+              )}</tr>`,
+            ""
+          )} 
+        </table>
+      `;
+    </script>
+  </body>
+</html>
