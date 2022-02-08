@@ -1,4 +1,4 @@
-# uppercod/calendar
+# @uppercod/calendar
 
 Generates the days for a month grouped by week, example:
 
