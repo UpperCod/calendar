@@ -6,7 +6,7 @@ export function getMonthRowsFromDate(date: Date, day: number = 1) {
   let firstDay = month.getDay();
   let i = 0;
 
-  let week: Date[];
+  let week: Date[] = [];
   let rows: Date[][] = [];
   let end = getMonthString(month);
 
